@@ -1,69 +1,141 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>肆海阁</title>
-<script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>肆海阁</title>
+    <style>
+        /* 基础响应式设置 */
+        html { 
+            font-size: 62.5%; /* 1rem = 10px */
+            box-sizing: border-box;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        body {
+            margin: 0;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            line-height: 1.6;
+            color: #000;
+        }
+
+        /* 容器系统 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* 导航栏 */
+        nav {
+            background: #000;
+            padding: 2rem 0;
+        }
+        nav table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        nav td {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /* 标题系统 */
+        .main-title {
+            background: #000;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 10rem;
+            margin: 0;
+            color: #fff;
+            font-family: '华文新魏';
+            line-height: 1.2;
+        }
+        .subtitle {
+            font-size: 3.6rem;
+            color: #fff;
+            margin: 1rem 0;
+        }
+
+        /* 时间显示 */
+        #time {
+            font-size: 3rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        /* 页脚 */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        footer p {
+            margin: 1rem 0;
+        }
+
+        /* 链接样式 */
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 2.4rem;
+            transition: opacity 0.3s;
+        }
+        a:hover {
+            opacity: 0.8;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            html { font-size: 50%; }
+            nav table { width: 100%; }
+            h1 { font-size: 6rem; }
+            .subtitle { font-size: 2.4rem; }
+            #time { font-size: 2rem; }
+        }
+    </style>
+    <script>
         function updateTime() {
-            var date = new Date();
-            var year = date.getFullYear();
-            var month = (date.getMonth() + 1).toString().padStart(2, '0'); // 补零操作
-            var day = date.getDate().toString().padStart(2, '0');
-            var hours = date.getHours().toString().padStart(2, '0');
-            var minutes = date.getMinutes().toString().padStart(2, '0');
-            var seconds = date.getSeconds().toString().padStart(2, '0');
-            var timeStr = year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds;
-            document.getElementById("time").innerHTML = timeStr;
+            const date = new Date();
+            const timeStr = date.toISOString().slice(0, 19).replace("T", " ");
+            document.getElementById("time").textContent = timeStr;
         }
         setInterval(updateTime, 1000);
         updateTime();
-</script>
-<style>
-	    a 
-		{
-            text-decoration: none; 
-        }
-        a:link 
-		{
-            color: white; 
-        }
-        a:visited {
-            color: red; 	
-</style>
+    </script>
 </head>
+<body>
+    <nav>
+        <div class="container">
+            <table>
+                <tr>
+                    <td><a href="https://涵.fun">INDEX</a></td>
+                    <td><a href="https://sleep.涵.fun">INeedSleep</a></td>
+                    <td><a href="https://github.com/hyberjustlove">GitHub</a></td>
+                </tr>
+            </table>
+        </div>
+    </nav>
 
-<body style="font-size: 36px; font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', 'Arial Black', sans-serif; color: #000000;">
-	<div style="background: black; color: #FFFFFF; font-size: 36px;">
-		<table width="50%">
-			<tr>
-				<td><a href="https://涵.fun">INDEX</a></td>
-				<td><a href="https://sleep.涵.fun">INeedSleep</a></td>
-				<td><a href="https://github.com/hyberjustlove">GitHub</a></td>
-			</tr>
-			<tr>
-			  <td>&nbsp;</td>
-			</tr>
-		</table>
-	</div>
-	
-	<center>
-		<div style="background: black; color: #FFFFFF;">
-			<h style="font-weight: 900; font-size: 100px; font-family: '华文新魏'; color: #FFFFFF;">肆海阁</h>
-			<br>
-			<h>4 Sea</h>
-			<br>
-		  <br>
-			<center><h>自由&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不羁 </h></center>
-			<br>
-		</div>
-	</center>
-	<center>
-	  Now
-<div id="time"></div></center>
-<hr>
-<p>
-	<center><h style="font-size: 18px; font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', 'Arial Black', sans-serif; color: #000000;">©2025 Hyberjustlove</h></center>
-	<center><h style="font-size: 24px; font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', 'Arial Black', sans-serif; color: #000000;">Peace & Love</h></center>
-</p>
+    <div class="main-title">
+        <div class="container">
+            <h1>肆海阁</h1>
+            <div class="subtitle">4 Sea</div>
+            <div class="subtitle">自由      不羁</div>
+        </div>
+    </div>
+	<center><h style="font-size: 100px">NOW</h></center>
+    <div id="time"></div>
+
+    <footer>
+		<hr style="border: 2px solid">
+        <div class="container">
+            <p style="font-size: 1.8rem;">©2025 Hyberjustlove</p>
+            <p style="font-size: 2.4rem;">Peace & Love</p>
+        </div>
+    </footer>
 </body>
 </html>
