@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>肆海阁</title>
+<script>
+        function updateTime() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = (date.getMonth() + 1).toString().padStart(2, '0'); // 补零操作
+            var day = date.getDate().toString().padStart(2, '0');
+            var hours = date.getHours().toString().padStart(2, '0');
+            var minutes = date.getMinutes().toString().padStart(2, '0');
+            var seconds = date.getSeconds().toString().padStart(2, '0');
+            var timeStr = year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds;
+            document.getElementById("time").innerHTML = timeStr;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+</script>
+<style>
+	    a 
+		{
+            text-decoration: none; 
+        }
+        a:link 
+		{
+            color: white; 
+        }
+        a:visited {
+            color: red; 	
+</style>
+</head>
+
+<body style="font-size: 36px; font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', 'Arial Black', sans-serif; color: #000000;">
+	<div style="background: black; color: #FFFFFF; font-size: 36px;">
+		<table width="50%">
+			<tr>
+				<td><a href="https://涵.fun">INDEX</a></td>
+				<td><a href="https://sleep.涵.fun">INeedSleep</a></td>
+				<td><a href="https://github.com/hyberjustlove">GitHub</a></td>
+			</tr>
+			<tr>
+			  <td>&nbsp;</td>
+			</tr>
+		</table>
+	</div>
+	
+	<center>
+		<div style="background: black; color: #FFFFFF;">
+			<h style="font-weight: 900; font-size: 100px; font-family: '华文新魏'; color: #FFFFFF;">肆海阁</h>
+			<br>
+			<h>4 Sea</h>
+			<br>
+		  <br>
+			<center><h>自由&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不羁 </h></center>
+			<br>
+		</div>
+	</center>
+	<center>
+	  Now
+<div id="time"></div></center>
+<hr>
+<p>
+	<center><h style="font-size: 18px; font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', 'Arial Black', sans-serif; color: #000000;">©2025 Hyberjustlove</h></center>
+	<center><h style="font-size: 24px; font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', 'Arial Black', sans-serif; color: #000000;">Peace & Love</h></center>
+</p>
+</body>
+</html>
